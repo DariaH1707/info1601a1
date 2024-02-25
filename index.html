@@ -4,13 +4,251 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>The Pigeon Site</title>
     <style>
 
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 1em 0;
+    text-align: center;
+    height: 60px;
+}
+
+.navbar h1{
+    margin: 0;
+}
+
+.navbar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li{
+    display: inline;
+    margin-right: 1em;
+}
+
+.navbar a{
+    text-decoration: dotted;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+.navbar a:hover{
+    background-color:#272927;
+}
+
+.nav-links{
+    display: inline-block;
+}
+
+main{
+    padding-top: 80px;
+    padding-bottom: 100px;
+    flex-grow: 1;
+}
+
+.content{
+    margin-top: 100px; 
+}
+
+section{
+    width: 614.391px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 4px;
+    padding: 1.5em;
+    margin-top: 1.5em;
+    color: black;
+    height: 500px;
+    margin-left: 76.7969px;
+    margin-right: 76.8125px;
+}
+
+img{
+    max-width: 500px;
+    height: auto;
+}
+
+table{
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td{
+    border: 1px solid rgb(221, 221, 221);
+    padding: 1em;
+    text-align: left;
+}
+
+form{
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 4px;
+    display: inline;
+}
+
+form label{
+    display: inline;
+    width: 80px;
+    text-align: center;
+    margin-right: 0.5em;
+}
+
+input[type="email"],
+textarea{
+    width: calc(100% - 2em);
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+input[type="submit"]{
+    padding: 0.5em 1em;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
         
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 1em 0;
+    text-align: center;
+    color: white;
+}
+
+#trivia summary{
+    background-color: #D9DCD6;
+    padding: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#trivia details{
+    padding: 1em;
+    border-radius: 4px;
+    background-color: #D9DCD6;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
     </style>
 </head>
+
+
 <body>
-   <h1>My Site</h1>
+    <div class="navbar">
+        <h1>Welcome to The Pigeon Site</h1>
+        <div class = "nav-links">
+        <nav>
+            <ul>
+                <li><a href="#picture">Pictures</a></li>
+                <li><a href="#trivia">Trivia</a></li>
+                <li><a href="#famous">Famous Pigeons</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+
+    <main>
+        <section id="picture">
+            <h1>Picture</h1>
+            <img src="pigeon.jpg" alt="Pigeon">
+        </section>
+
+        <section id="trivia">
+            <h1>Trivia</h1>
+            <details>
+                <summary>They Understand Space and Time</summary>
+                <ul>
+                    <li>A 2017 study found pigeons could evaluate the time it takes a digital line to be drawn according to its length.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>They are Excellent at Homing</summary>
+                <ul>
+                    <li>Pigeons can find their way home from 1300 miles away even if they've been transported in complete isolation.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    They can diagnose cancer
+                </summary>
+                <ul>
+                    <li>A 2015 study revealed that pigeons can be trained to diagnose cancer from images with astonishing accuracy of 99%.</li>
+                </ul>
+            </details>
+        </section>
+
+        <section id="famous-pigeons">
+            <h1>Famous Pigeons</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Bio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>G. I. Joe</td>
+                        <td>Flown 20 miles to cancel a bombing on friendly British Troops.</td>
+                    </tr>
+                    <tr>
+                        <td>Cher Ami</td>
+                        <td>Flown for 25 minutes to deliver a crucial message to base despite being shot at.</td>
+                    </tr>
+                    <tr>
+                        <td>Mocker</td>
+                        <td>Delivered a life-saving message after losing its eye from artillery fire.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <form>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class = "footer">
+            <p> &copy; 2024 The Pigeon Site. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
 </body>
 </html>
